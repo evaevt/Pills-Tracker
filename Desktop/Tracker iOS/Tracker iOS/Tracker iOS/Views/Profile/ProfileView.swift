@@ -4,6 +4,11 @@ struct ProfileView: View {
   @EnvironmentObject private var subscriptionService: SubscriptionService
   @State private var showingEditProfile = false
   @State private var showingSubscriptionSheet = false
+  @State private var showingSettings = false
+  @State private var showingSupport = false
+  @State private var showingAbout = false
+  @State private var showingPrivacyPolicy = false
+  @State private var showingTermsOfService = false
 
   var body: some View {
     ScrollView {
@@ -21,17 +26,38 @@ struct ProfileView: View {
         )
 
         // Actions
-        ActionsSection()
+        ActionsSection(
+          onSettingsTapped: { showingSettings = true },
+          onSupportTapped: { showingSupport = true },
+          onAboutTapped: { showingAbout = true },
+          onPrivacyTapped: { showingPrivacyPolicy = true },
+          onTermsTapped: { showingTermsOfService = true }
+        )
 
-        Spacer(minLength: 100)
       }
       .padding()
+      .padding(.bottom, 12)
     }
     .sheet(isPresented: $showingEditProfile) {
       EditProfileView()
     }
     .sheet(isPresented: $showingSubscriptionSheet) {
       SubscriptionSheetView()
+    }
+    .sheet(isPresented: $showingSettings) {
+      SettingsView()
+    }
+    .sheet(isPresented: $showingSupport) {
+      SupportView()
+    }
+    .sheet(isPresented: $showingAbout) {
+      AboutView()
+    }
+    .sheet(isPresented: $showingPrivacyPolicy) {
+      PrivacyPolicyView()
+    }
+    .sheet(isPresented: $showingTermsOfService) {
+      TermsOfServiceView()
     }
     .task {
       await subscriptionService.loadUserProfile()
@@ -170,6 +196,12 @@ struct SubscriptionStatusCard: View {
 }
 
 struct ActionsSection: View {
+  let onSettingsTapped: () -> Void
+  let onSupportTapped: () -> Void
+  let onAboutTapped: () -> Void
+  let onPrivacyTapped: () -> Void
+  let onTermsTapped: () -> Void
+
   var body: some View {
     VStack(alignment: .leading, spacing: 16) {
       Text("Settings")
@@ -177,20 +209,14 @@ struct ActionsSection: View {
         .fontWeight(.semibold)
 
       VStack(spacing: 12) {
-        ForEach(
-          [
-            ProfileAction.settings,
-            ProfileAction.support,
-            ProfileAction.about,
-            ProfileAction.privacy,
-            ProfileAction.terms,
-          ], id: \.title
-        ) { action in
-          ActionRow(action: action)
-        }
+        ActionRow(action: .settings, onTapped: onSettingsTapped)
+        ActionRow(action: .support, onTapped: onSupportTapped)
+        ActionRow(action: .about, onTapped: onAboutTapped)
+        ActionRow(action: .privacy, onTapped: onPrivacyTapped)
+        ActionRow(action: .terms, onTapped: onTermsTapped)
 
         // Logout button
-        ActionRow(action: .logout)
+        ActionRow(action: .logout, onTapped: {})
           .foregroundColor(.red)
       }
     }
@@ -199,11 +225,10 @@ struct ActionsSection: View {
 
 struct ActionRow: View {
   let action: ProfileAction
+  let onTapped: () -> Void
 
   var body: some View {
-    Button(action: {
-      handleAction(action)
-    }) {
+    Button(action: onTapped) {
       HStack {
         Image(systemName: action.icon)
           .foregroundColor(action.color)
@@ -223,35 +248,6 @@ struct ActionRow: View {
       .padding()
       .background(Color(.systemGray6))
       .cornerRadius(12)
-    }
-  }
-
-  private func handleAction(_ action: ProfileAction) {
-    switch action {
-    case .editProfile:
-      // Handle edit profile
-      break
-    case .manageSubscription:
-      // Handle subscription management
-      break
-    case .settings:
-      // Handle settings
-      break
-    case .support:
-      // Handle support
-      break
-    case .about:
-      // Handle about
-      break
-    case .privacy:
-      // Handle privacy policy
-      break
-    case .terms:
-      // Handle terms of service
-      break
-    case .logout:
-      // Handle logout
-      break
     }
   }
 }

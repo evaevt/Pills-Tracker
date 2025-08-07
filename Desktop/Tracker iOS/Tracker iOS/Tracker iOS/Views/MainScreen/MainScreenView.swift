@@ -42,12 +42,12 @@ struct MainScreenView: View {
           saveButton
             .frame(maxWidth: .infinity)  // Центрируем кнопку
 
-          Spacer(minLength: 100)
         }
         .padding(.horizontal, 20)  // Увеличенные симметричные отступы
-        .padding(.top, 12)
+        .padding(.vertical, 12)  // Добавляем вертикальные отступы
         .frame(maxWidth: geometry.size.width)  // Используем точную ширину экрана
       }
+      .safeAreaInset(edge: .bottom) { Color.clear.frame(height: 0) }
     }
     .navigationBarHidden(true)
     .background(Color(.systemBackground))
@@ -198,34 +198,52 @@ struct MainScreenView: View {
             .foregroundColor(.blue)
         }
 
-        // Modern Progress Circles - Adaptive Grid
-        LazyVGrid(
-          columns: Array(repeating: GridItem(.flexible(), spacing: 4), count: 5), spacing: 6
-        ) {
+        // Water Drops - Single Row
+        HStack(spacing: 8) {
           ForEach(0..<10, id: \.self) { index in
-            Circle()
-              .fill(
+            Image(systemName: "drop.fill")
+              .font(.system(size: 18, weight: .medium))
+              .foregroundColor(
                 index < dayDataService.currentDayData.waterCount
-                  ? LinearGradient(
-                    gradient: Gradient(colors: [Color(red: 0.2, green: 0.7, blue: 1.0), Color.blue]
-                    ),
-                    startPoint: .topLeading,
-                    endPoint: .bottomTrailing
-                  )
-                  : LinearGradient(
-                    gradient: Gradient(colors: [Color.gray.opacity(0.15), Color.gray.opacity(0.25)]
-                    ),
-                    startPoint: .topLeading,
-                    endPoint: .bottomTrailing
-                  )
+                  ? Color(red: 0.2, green: 0.7, blue: 1.0)
+                  : Color.gray.opacity(0.3)
               )
-              .frame(width: 16, height: 16)
               .shadow(
                 color: index < dayDataService.currentDayData.waterCount
                   ? .blue.opacity(0.3) : .clear,
                 radius: 2, x: 0, y: 1
               )
+              .scaleEffect(index < dayDataService.currentDayData.waterCount ? 1.0 : 0.8)
+              .animation(
+                .spring(response: 0.3, dampingFraction: 0.6),
+                value: dayDataService.currentDayData.waterCount)
           }
+        }
+        .gesture(
+          DragGesture()
+            .onEnded { gesture in
+              let horizontalDistance = gesture.translation.width
+              let verticalDistance = abs(gesture.translation.height)
+
+              // Горизонтальный свайп слева направо для сброса
+              if horizontalDistance > 50 && verticalDistance < 30
+                && dayDataService.currentDayData.waterCount > 0
+              {
+                withAnimation(.easeOut(duration: 0.4)) {
+                  dayDataService.updateCurrentDayData(waterCount: 0)
+                }
+                let impactFeedback = UIImpactFeedbackGenerator(style: .medium)
+                impactFeedback.impactOccurred()
+              }
+            }
+        )
+        .onLongPressGesture {
+          // Долгое нажатие как альтернативный способ сброса
+          withAnimation(.easeOut(duration: 0.4)) {
+            dayDataService.updateCurrentDayData(waterCount: 0)
+          }
+          let impactFeedback = UIImpactFeedbackGenerator(style: .medium)
+          impactFeedback.impactOccurred()
         }
 
         // Progress Text
@@ -250,10 +268,21 @@ struct MainScreenView: View {
     VStack(alignment: .leading, spacing: 20) {
       // Header with edit button
       HStack {
-        Text("Vitamins")
-          .font(.title3)
-          .fontWeight(.bold)
-          .foregroundColor(.white)
+        Image(systemName: "pills.fill")
+          .font(.title2)
+          .foregroundColor(.purple)
+          .frame(width: 32, height: 32)
+
+        VStack(alignment: .leading, spacing: 2) {
+          Text("Daily Vitamins")
+            .font(.title3)
+            .fontWeight(.bold)
+            .foregroundColor(.primary)
+
+          Text("Track your supplements")
+            .font(.subheadline)
+            .foregroundColor(.secondary)
+        }
 
         Spacer()
 
@@ -272,15 +301,9 @@ struct MainScreenView: View {
             }
           }
         }) {
-          ZStack {
-            Circle()
-              .fill(Color.white.opacity(0.2))
-              .frame(width: 36, height: 36)
-
-            Image(systemName: isEditingVitamins ? "checkmark" : "pencil")
-              .font(.system(size: 16, weight: .semibold))
-              .foregroundColor(.white)
-          }
+          Image(systemName: isEditingVitamins ? "checkmark.circle.fill" : "pencil.circle.fill")
+            .font(.title3)
+            .foregroundColor(.purple)
         }
         .buttonStyle(PlainButtonStyle())
       }
@@ -293,9 +316,9 @@ struct MainScreenView: View {
             editableVitaminRow(for: vitaminKey)
           }
         } else {
-          // Normal mode
+          // Normal mode - medical record style cards
           ForEach(VitaminKey.allCases, id: \.self) { vitaminKey in
-            modernVitaminRow(
+            medicalRecordVitaminRow(
               dayDataService.vitaminNames.getName(for: vitaminKey),
               isActive: getVitaminState(for: vitaminKey)
             ) {
@@ -305,17 +328,11 @@ struct MainScreenView: View {
         }
       }
     }
-    .padding(18)
+    .padding(20)
     .background(
-      LinearGradient(
-        gradient: Gradient(colors: [
-          Color(red: 0.9, green: 0.4, blue: 0.9), Color(red: 0.8, green: 0.2, blue: 0.8),
-        ]),
-        startPoint: .topLeading,
-        endPoint: .bottomTrailing
-      )
-      .cornerRadius(20)
-      .shadow(color: .purple.opacity(0.3), radius: 12, x: 0, y: 6)
+      RoundedRectangle(cornerRadius: 20)
+        .fill(Color(.systemBackground))
+        .shadow(color: .black.opacity(0.08), radius: 12, x: 0, y: 4)
     )
   }
 
@@ -424,6 +441,62 @@ struct MainScreenView: View {
       }
       .opacity(0.5)
     }
+  }
+
+  // Medical record style vitamin row
+  private func medicalRecordVitaminRow(_ name: String, isActive: Bool, action: @escaping () -> Void)
+    -> some View
+  {
+    Button(action: action) {
+      HStack(spacing: 16) {
+        // Vitamin icon with medical style
+        ZStack {
+          RoundedRectangle(cornerRadius: 8)
+            .fill(isActive ? Color.purple.opacity(0.1) : Color.gray.opacity(0.05))
+            .frame(width: 40, height: 40)
+
+          Image(systemName: "pills.fill")
+            .font(.system(size: 18, weight: .medium))
+            .foregroundColor(isActive ? .purple : .gray)
+        }
+
+        // Vitamin info
+        VStack(alignment: .leading, spacing: 4) {
+          Text(name)
+            .font(.system(size: 16, weight: .medium))
+            .foregroundColor(.primary)
+            .multilineTextAlignment(.leading)
+
+          Text(isActive ? "Taken today" : "Not taken yet")
+            .font(.caption)
+            .foregroundColor(isActive ? .purple : .secondary)
+        }
+
+        Spacer()
+
+        // Status indicator with 3D effect
+        ZStack {
+          Circle()
+            .fill(isActive ? Color.purple : Color.gray.opacity(0.3))
+            .frame(width: 24, height: 24)
+            .shadow(color: isActive ? .purple.opacity(0.3) : .clear, radius: 4, x: 0, y: 2)
+
+          if isActive {
+            Image(systemName: "checkmark")
+              .font(.system(size: 12, weight: .bold))
+              .foregroundColor(.white)
+          }
+        }
+      }
+      .padding(.horizontal, 16)
+      .padding(.vertical, 12)
+      .background(
+        RoundedRectangle(cornerRadius: 12)
+          .fill(Color(.systemGray6))
+          .shadow(color: .black.opacity(0.05), radius: 3, x: 0, y: 1)
+      )
+    }
+    .buttonStyle(PlainButtonStyle())
   }
 
   private func getVitaminState(for vitaminKey: VitaminKey) -> Bool {

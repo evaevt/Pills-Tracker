@@ -59,9 +59,8 @@ struct CalendarView: View {
           }
         }
 
-        Spacer(minLength: 100)
       }
-      .padding(.top)
+      .padding(.vertical, 12)
     }
   }
 

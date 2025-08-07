@@ -48,9 +48,8 @@ struct AnalyticsView: View {
           .frame(maxWidth: .infinity, minHeight: 200)
         }
 
-        Spacer(minLength: 100)
       }
-      .padding(.top)
+      .padding(.vertical, 12)
     }
     .onAppear {
       loadAnalytics()
