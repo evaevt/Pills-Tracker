@@ -3,15 +3,20 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var router: AppRouter
     @EnvironmentObject var appState: AppState
+    @EnvironmentObject var authService: AuthenticationService
     
     var body: some View {
-        NavigationStack(path: $router.navigationPath) {
-            MainScreenView()
-                .navigationDestination(for: AppRouter.Screen.self) { screen in
-                    destinationView(for: screen)
-                }
+        if authService.user != nil {
+            NavigationStack(path: $router.navigationPath) {
+                MainScreenView()
+                    .navigationDestination(for: AppRouter.Screen.self) { screen in
+                        destinationView(for: screen)
+                    }
+            }
+            .tint(.blue)
+        } else {
+            LoginView()
         }
-        .tint(.blue)
     }
     
     @ViewBuilder
