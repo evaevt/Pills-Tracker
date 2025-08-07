@@ -6,39 +6,32 @@ struct ProfileView: View {
   @State private var showingSubscriptionSheet = false
 
   var body: some View {
-    NavigationView {
-      ScrollView {
-        VStack(spacing: 24) {
-          // Profile Header
-          ProfileHeaderView(
-            userProfile: subscriptionService.userProfile,
-            onEditTapped: { showingEditProfile = true }
-          )
+    ScrollView {
+      VStack(spacing: 24) {
+        // Profile Header
+        ProfileHeaderView(
+          userProfile: subscriptionService.userProfile,
+          onEditTapped: { showingEditProfile = true }
+        )
 
-          // Subscription Status
-          SubscriptionStatusCard(
-            subscription: subscriptionService.userProfile.subscription,
-            onManageTapped: { showingSubscriptionSheet = true }
-          )
+        // Subscription Status
+        SubscriptionStatusCard(
+          subscription: subscriptionService.userProfile.subscription,
+          onManageTapped: { showingSubscriptionSheet = true }
+        )
 
-          // Statistics
-          StatisticsSection(statistics: subscriptionService.userProfile.statistics)
+        // Actions
+        ActionsSection()
 
-          // Actions
-          ActionsSection()
-
-          Spacer(minLength: 100)
-        }
-        .padding()
+        Spacer(minLength: 100)
       }
-      .navigationTitle("Profile")
-      .navigationBarTitleDisplayMode(.large)
-      .sheet(isPresented: $showingEditProfile) {
-        EditProfileView()
-      }
-      .sheet(isPresented: $showingSubscriptionSheet) {
-        SubscriptionSheetView()
-      }
+      .padding()
+    }
+    .sheet(isPresented: $showingEditProfile) {
+      EditProfileView()
+    }
+    .sheet(isPresented: $showingSubscriptionSheet) {
+      SubscriptionSheetView()
     }
     .task {
       await subscriptionService.loadUserProfile()
@@ -173,81 +166,6 @@ struct SubscriptionStatusCard: View {
     .background(Color(.systemBackground))
     .cornerRadius(16)
     .shadow(color: .black.opacity(0.05), radius: 2, x: 0, y: 1)
-  }
-}
-
-struct StatisticsSection: View {
-  let statistics: UserStatistics
-
-  var body: some View {
-    VStack(alignment: .leading, spacing: 16) {
-      Text("Statistics")
-        .font(.headline)
-        .fontWeight(.semibold)
-
-      LazyVGrid(
-        columns: [
-          GridItem(.flexible()),
-          GridItem(.flexible()),
-        ], spacing: 12
-      ) {
-        StatisticCard(
-          title: "Total Trackers",
-          value: "\(statistics.totalTrackers)",
-          icon: "list.clipboard",
-          color: .blue
-        )
-
-        StatisticCard(
-          title: "Active Trackers",
-          value: "\(statistics.activeTrackers)",
-          icon: "play.circle",
-          color: .green
-        )
-
-        StatisticCard(
-          title: "Total Entries",
-          value: "\(statistics.totalEntries)",
-          icon: "calendar",
-          color: .orange
-        )
-
-        StatisticCard(
-          title: "Current Streak",
-          value: "\(statistics.streakDays) days",
-          icon: "flame",
-          color: .red
-        )
-      }
-    }
-  }
-}
-
-struct StatisticCard: View {
-  let title: String
-  let value: String
-  let icon: String
-  let color: Color
-
-  var body: some View {
-    VStack(spacing: 8) {
-      Image(systemName: icon)
-        .font(.title2)
-        .foregroundColor(color)
-
-      Text(value)
-        .font(.title3)
-        .fontWeight(.bold)
-
-      Text(title)
-        .font(.caption)
-        .foregroundColor(.secondary)
-        .multilineTextAlignment(.center)
-    }
-    .padding()
-    .frame(maxWidth: .infinity)
-    .background(Color(.systemGray6))
-    .cornerRadius(12)
   }
 }
 

@@ -1,0 +1,620 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		264FB2962E2816370062247C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 264FB27D2E2816350062247C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 264FB2842E2816350062247C;
+			remoteInfo = "Tracker iOS";
+		};
+		264FB2A02E2816370062247C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 264FB27D2E2816350062247C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 264FB2842E2816350062247C;
+			remoteInfo = "Tracker iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		264FB2852E2816350062247C /* Tracker iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tracker iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		264FB2952E2816370062247C /* Tracker iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tracker iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		264FB29F2E2816370062247C /* Tracker iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tracker iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		264FB31B2E281A050062247C /* Exceptions for "Tracker iOS" folder in "Tracker iOSTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				ARCHITECTURE.md,
+				DependencyContainer.swift,
+				Models/CoreData/PersistenceController.swift,
+				Models/ModuleTypes.swift,
+				Models/TrackerConfiguration.swift,
+				Models/TrackerModule.swift,
+				PROJECT_FILES.md,
+				README.md,
+				Services/DataService.swift,
+				Services/ModuleFactory.swift,
+				TrackerApp.swift,
+				Views/ActiveTracker/ActiveTrackerView.swift,
+				Views/Analytics/AnalyticsView.swift,
+				Views/Constructor/ConstructorView.swift,
+				Views/Constructor/ModuleLibraryView.swift,
+				Views/MainScreen/MainScreenView.swift,
+				Views/MainScreen/TrackerCardView.swift,
+				Views/Settings/ModuleSettingsView.swift,
+				XCODE_SETUP.md,
+			);
+			target = 264FB2942E2816370062247C /* Tracker iOSTests */;
+		};
+		264FB31C2E281A050062247C /* Exceptions for "Tracker iOS" folder in "Tracker iOSUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				ARCHITECTURE.md,
+				DependencyContainer.swift,
+				Models/CoreData/PersistenceController.swift,
+				Models/ModuleTypes.swift,
+				Models/TrackerConfiguration.swift,
+				Models/TrackerModule.swift,
+				PROJECT_FILES.md,
+				README.md,
+				Services/DataService.swift,
+				Services/ModuleFactory.swift,
+				TrackerApp.swift,
+				Views/ActiveTracker/ActiveTrackerView.swift,
+				Views/Analytics/AnalyticsView.swift,
+				Views/Constructor/ConstructorView.swift,
+				Views/Constructor/ModuleLibraryView.swift,
+				Views/MainScreen/MainScreenView.swift,
+				Views/MainScreen/TrackerCardView.swift,
+				Views/Settings/ModuleSettingsView.swift,
+				XCODE_SETUP.md,
+			);
+			target = 264FB29E2E2816370062247C /* Tracker iOSUITests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		264FB2872E2816350062247C /* Tracker iOS */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				264FB31B2E281A050062247C /* Exceptions for "Tracker iOS" folder in "Tracker iOSTests" target */,
+				264FB31C2E281A050062247C /* Exceptions for "Tracker iOS" folder in "Tracker iOSUITests" target */,
+			);
+			path = "Tracker iOS";
+			sourceTree = "<group>";
+		};
+		264FB2982E2816370062247C /* Tracker iOSTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Tracker iOSTests";
+			sourceTree = "<group>";
+		};
+		264FB2A22E2816370062247C /* Tracker iOSUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Tracker iOSUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		264FB2822E2816350062247C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		264FB2922E2816370062247C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		264FB29C2E2816370062247C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		264FB27C2E2816350062247C = {
+			isa = PBXGroup;
+			children = (
+				264FB2872E2816350062247C /* Tracker iOS */,
+				264FB2982E2816370062247C /* Tracker iOSTests */,
+				264FB2A22E2816370062247C /* Tracker iOSUITests */,
+				264FB2862E2816350062247C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		264FB2862E2816350062247C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				264FB2852E2816350062247C /* Tracker iOS.app */,
+				264FB2952E2816370062247C /* Tracker iOSTests.xctest */,
+				264FB29F2E2816370062247C /* Tracker iOSUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		264FB2842E2816350062247C /* Tracker iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 264FB2A92E2816370062247C /* Build configuration list for PBXNativeTarget "Tracker iOS" */;
+			buildPhases = (
+				264FB2812E2816350062247C /* Sources */,
+				264FB2822E2816350062247C /* Frameworks */,
+				264FB2832E2816350062247C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				264FB2872E2816350062247C /* Tracker iOS */,
+			);
+			name = "Tracker iOS";
+			packageProductDependencies = (
+			);
+			productName = "Tracker iOS";
+			productReference = 264FB2852E2816350062247C /* Tracker iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		264FB2942E2816370062247C /* Tracker iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 264FB2AC2E2816370062247C /* Build configuration list for PBXNativeTarget "Tracker iOSTests" */;
+			buildPhases = (
+				264FB2912E2816370062247C /* Sources */,
+				264FB2922E2816370062247C /* Frameworks */,
+				264FB2932E2816370062247C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				264FB2972E2816370062247C /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				264FB2982E2816370062247C /* Tracker iOSTests */,
+			);
+			name = "Tracker iOSTests";
+			packageProductDependencies = (
+			);
+			productName = "Tracker iOSTests";
+			productReference = 264FB2952E2816370062247C /* Tracker iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		264FB29E2E2816370062247C /* Tracker iOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 264FB2AF2E2816370062247C /* Build configuration list for PBXNativeTarget "Tracker iOSUITests" */;
+			buildPhases = (
+				264FB29B2E2816370062247C /* Sources */,
+				264FB29C2E2816370062247C /* Frameworks */,
+				264FB29D2E2816370062247C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				264FB2A12E2816370062247C /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				264FB2A22E2816370062247C /* Tracker iOSUITests */,
+			);
+			name = "Tracker iOSUITests";
+			packageProductDependencies = (
+			);
+			productName = "Tracker iOSUITests";
+			productReference = 264FB29F2E2816370062247C /* Tracker iOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		264FB27D2E2816350062247C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					264FB2842E2816350062247C = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					264FB2942E2816370062247C = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 264FB2842E2816350062247C;
+					};
+					264FB29E2E2816370062247C = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 264FB2842E2816350062247C;
+					};
+				};
+			};
+			buildConfigurationList = 264FB2802E2816350062247C /* Build configuration list for PBXProject "Tracker iOS" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 264FB27C2E2816350062247C;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 264FB2862E2816350062247C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				264FB2842E2816350062247C /* Tracker iOS */,
+				264FB2942E2816370062247C /* Tracker iOSTests */,
+				264FB29E2E2816370062247C /* Tracker iOSUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		264FB2832E2816350062247C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		264FB2932E2816370062247C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		264FB29D2E2816370062247C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		264FB2812E2816350062247C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		264FB2912E2816370062247C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		264FB29B2E2816370062247C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		264FB2972E2816370062247C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 264FB2842E2816350062247C /* Tracker iOS */;
+			targetProxy = 264FB2962E2816370062247C /* PBXContainerItemProxy */;
+		};
+		264FB2A12E2816370062247C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 264FB2842E2816350062247C /* Tracker iOS */;
+			targetProxy = 264FB2A02E2816370062247C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		264FB2A72E2816370062247C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		264FB2A82E2816370062247C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		264FB2AA2E2816370062247C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Tracker iOS/Preview Content\"";
+				DEVELOPMENT_TEAM = 9745GS2ZBF;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tracker.app.Tracker-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		264FB2AB2E2816370062247C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Tracker iOS/Preview Content\"";
+				DEVELOPMENT_TEAM = 9745GS2ZBF;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tracker.app.Tracker-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		264FB2AD2E2816370062247C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9745GS2ZBF;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tracker.app.Tracker-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tracker iOS.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Tracker iOS";
+			};
+			name = Debug;
+		};
+		264FB2AE2E2816370062247C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9745GS2ZBF;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tracker.app.Tracker-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tracker iOS.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Tracker iOS";
+			};
+			name = Release;
+		};
+		264FB2B02E2816370062247C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9745GS2ZBF;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tracker.app.Tracker-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Tracker iOS";
+			};
+			name = Debug;
+		};
+		264FB2B12E2816370062247C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9745GS2ZBF;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tracker.app.Tracker-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Tracker iOS";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		264FB2802E2816350062247C /* Build configuration list for PBXProject "Tracker iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				264FB2A72E2816370062247C /* Debug */,
+				264FB2A82E2816370062247C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		264FB2A92E2816370062247C /* Build configuration list for PBXNativeTarget "Tracker iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				264FB2AA2E2816370062247C /* Debug */,
+				264FB2AB2E2816370062247C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		264FB2AC2E2816370062247C /* Build configuration list for PBXNativeTarget "Tracker iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				264FB2AD2E2816370062247C /* Debug */,
+				264FB2AE2E2816370062247C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		264FB2AF2E2816370062247C /* Build configuration list for PBXNativeTarget "Tracker iOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				264FB2B02E2816370062247C /* Debug */,
+				264FB2B12E2816370062247C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 264FB27D2E2816350062247C /* Project object */;
+}

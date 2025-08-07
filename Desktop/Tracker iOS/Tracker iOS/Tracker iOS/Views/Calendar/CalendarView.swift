@@ -14,58 +14,54 @@ struct CalendarView: View {
   }()
 
   var body: some View {
-    NavigationView {
-      ScrollView {
-        VStack(spacing: 20) {
-          // Month Header
-          HStack {
-            Button(action: previousMonth) {
-              Image(systemName: "chevron.left")
-                .font(.title2)
-                .foregroundColor(.blue)
-            }
-
-            Spacer()
-
-            Text(dateFormatter.string(from: currentMonth))
+    ScrollView {
+      VStack(spacing: 20) {
+        // Month Header
+        HStack {
+          Button(action: previousMonth) {
+            Image(systemName: "chevron.left")
               .font(.title2)
-              .fontWeight(.semibold)
-
-            Spacer()
-
-            Button(action: nextMonth) {
-              Image(systemName: "chevron.right")
-                .font(.title2)
-                .foregroundColor(.blue)
-            }
-          }
-          .padding(.horizontal)
-
-          // Calendar Grid
-          CalendarGridView(
-            currentMonth: currentMonth,
-            selectedDate: $selectedDate,
-            dayDataService: dayDataService
-          )
-
-          // Selected Date Info
-          if let dayData = getDayData(for: selectedDate) {
-            DayDetailCard(dayData: dayData)
-              .padding(.horizontal)
-
-            // Notes Block (separate) - только если есть заметки
-            if !dayData.noteText.isEmpty {
-              DayNotesCard(notes: dayData.noteText)
-                .padding(.horizontal)
-            }
+              .foregroundColor(.blue)
           }
 
-          Spacer(minLength: 100)
+          Spacer()
+
+          Text(dateFormatter.string(from: currentMonth))
+            .font(.title2)
+            .fontWeight(.semibold)
+
+          Spacer()
+
+          Button(action: nextMonth) {
+            Image(systemName: "chevron.right")
+              .font(.title2)
+              .foregroundColor(.blue)
+          }
         }
-        .padding(.top)
+        .padding(.horizontal)
+
+        // Calendar Grid
+        CalendarGridView(
+          currentMonth: currentMonth,
+          selectedDate: $selectedDate,
+          dayDataService: dayDataService
+        )
+
+        // Selected Date Info
+        if let dayData = getDayData(for: selectedDate) {
+          DayDetailCard(dayData: dayData)
+            .padding(.horizontal)
+
+          // Notes Block (separate) - только если есть заметки
+          if !dayData.noteText.isEmpty {
+            DayNotesCard(notes: dayData.noteText)
+              .padding(.horizontal)
+          }
+        }
+
+        Spacer(minLength: 100)
       }
-      .navigationTitle("Calendar")
-      .navigationBarTitleDisplayMode(.large)
+      .padding(.top)
     }
   }
 

@@ -1,0 +1,26 @@
+{
+	"version": "0.2",
+	"project": "./Tracker iOS.xcodeproj",
+	"scheme": "Tracker iOS",
+	"configuration": "Debug",
+	"destination": "platform=iOS Simulator,name=iPhone 16",
+	"buildSettings": {
+		"ENABLE_TESTABILITY": "YES",
+		"SWIFT_OPTIMIZATION_LEVEL": "-Onone"
+	},
+	"name": "xcode build server",
+	"bspVersion": "2.0",
+	"languages": [
+		"c",
+		"cpp",
+		"objective-c",
+		"objective-cpp",
+		"swift"
+	],
+	"argv": [
+		"/opt/homebrew/bin/xcode-build-server"
+	],
+	"workspace": "/Users/tina/Desktop/Tracker iOS/Tracker iOS.xcodeproj/project.xcworkspace",
+	"build_root": "/Users/tina/Library/Developer/Xcode/DerivedData/Tracker_iOS-bhxolarzbcxgjobqkyquxulxdbnf",
+	"kind": "xcode"
+}
