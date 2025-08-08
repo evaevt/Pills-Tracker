@@ -86,6 +86,15 @@ extension DependencyContainer {
             ValidationService()
         }
         
+        // Authentication & Push Notifications
+        register(AuthenticationServiceProtocol.self) {
+            AuthenticationService()
+        }
+        
+        register(PushNotificationServiceProtocol.self) {
+            PushNotificationService()
+        }
+        
         // Presentation Layer
         register(AppRouter.self) {
             AppRouter()
