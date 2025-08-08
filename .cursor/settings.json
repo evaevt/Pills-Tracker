@@ -1,0 +1,38 @@
+{
+  "files.associations": {
+    "*.swift": "swift",
+    "*.h": "objective-c",
+    "*.m": "objective-c",
+    "*.mm": "objective-cpp",
+    "*.xcdatamodeld": "xml",
+    "*.storyboard": "xml",
+    "*.xib": "xml",
+    "*.plist": "xml"
+  },
+  "swift.path": "/usr/bin/swift",
+  "swift.sourcekit.path": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/sourcekitd.framework/Versions/A/sourcekitd",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
+  },
+  "files.exclude": {
+    "**/.build": true,
+    "**/build": true,
+    "**/DerivedData": true,
+    "**/*.xcuserdata": true,
+    "**/.DS_Store": true
+  },
+  "search.exclude": {
+    "**/.build": true,
+    "**/build": true,
+    "**/DerivedData": true,
+    "**/*.xcuserdata": true
+  },
+  "editor.tabSize": 4,
+  "editor.insertSpaces": true,
+  "editor.rulers": [100],
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "swift.autoComplete": true,
+  "swift.diagnostics": true
+} 

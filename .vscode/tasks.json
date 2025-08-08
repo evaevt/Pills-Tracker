@@ -1,0 +1,53 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "sweetpad: build",
+            "type": "shell",
+            "command": "xcodebuild",
+            "args": [
+                "-project",
+                "./Tracker iOS.xcodeproj",
+                "-scheme",
+                "Tracker iOS",
+                "-destination",
+                "platform=iOS Simulator,name=iPhone 16",
+                "build"
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "sweetpad: launch",
+            "type": "shell",
+            "command": "xcodebuild",
+            "args": [
+                "-project",
+                "./Tracker iOS.xcodeproj",
+                "-scheme",
+                "Tracker iOS",
+                "-destination",
+                "platform=iOS Simulator,name=iPhone 16",
+                "build"
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": []
+        }
+    ]
+}
